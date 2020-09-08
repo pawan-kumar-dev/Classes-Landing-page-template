@@ -1,0 +1,754 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>S.N. Classes</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat:400,700&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+         input{
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+           body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    text-align: center;
+}
+textarea{
+    resize: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+            #topbar{
+                background-color: white;
+                height: 77px;
+                box-sizing: border-box;
+                z-index: 1;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                background-color: white;
+                box-shadow: 2px 2px 2px grey;
+            }
+            .menus{
+                position: relative;
+                padding-top: 10px;
+                font-weight: 600;
+                font-size: 14px;
+                color: black;
+                display: inline-block;
+                margin-right: 20px;
+                transform: translateY(-8px);
+                cursor: pointer;
+            }
+            #drop{
+                width: 130px;
+                border-top: 2px solid rgb(170, 210, 54);
+                padding: 20px;
+                position: absolute;
+                right: 2px;
+                background-color: white;
+                box-shadow: 0 2px 5px #ccc;
+                display: none;
+            }
+            #drop a{
+                display: block;
+                border-bottom: 1px solid gray;
+                text-align: left;
+                padding: 4px 0;
+                font-weight:300;
+                font-size: 16px;
+            }
+            #drop span:last-of-type{
+                border-bottom: 0;
+                padding-bottom: 0;
+            }
+            #dropdown:hover #drop{
+                display: block;
+            }
+            #logo{
+                margin-left: 30px;
+                width: 40px;
+                height: 40px;
+            }
+            .menus:last-of-type{
+                margin-right: 50px;
+            }
+            .menus span{
+                margin-right: 5px;
+            }
+            .green-button{
+                font-size: 12px;
+                font-weight: 600;
+                color: white;
+                background-color: rgb(170, 210, 54);
+                padding: 9px 34px;
+                border-radius: 4px;
+                border:0;
+                outline: none;
+                cursor: pointer;
+            }
+            header{
+                width: 100%;
+                height: 100vh;
+                background-image: url('https://cdn.pixabay.com/photo/2016/01/19/17/53/writing-1149962_960_720.jpg');
+                background-position: left;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            #section-one{
+                font-family: 'Poppins', sans-serif;
+                height: 100hv;
+                width: 100%;
+            }
+            #section-one div{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            #section-one div h1{
+                font-size: 44px;
+                width: 100%;
+                max-width: 1100px;
+                font-weight: 600;
+                letter-spacing: 8.8px;
+                line-height: 1.2;
+                background-image:linear-gradient(to right,rgba(235, 223, 223, 0.8),rgb(192, 173, 173,0.8));
+                color: rgb(78, 65, 41);
+            }
+            #section-one div p{
+                width: 100%;
+                max-width: 1100px;
+                font-size: 16px;
+                font-weight: 900;
+                letter-spacing: 0.5px;
+                font-weight: 400;
+                color: #272218;
+                background-image:linear-gradient(to right,rgba(235, 223, 223, 0.8),rgb(192, 173, 173,0.8));
+
+            }
+            #section-two{
+                width: 100%;
+                height: 100hv;
+                display:grid;
+                grid-template-columns: 25% 25% 25% 25%;
+                font-family:'Poppins', sans-serif;
+                color:white;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            #step-one{
+                background-color: #5acda6;
+            }
+            #step-two{
+                background-color: #91ac41;
+            }
+            #step-three{
+                background-color: #e4b476;
+            }
+            #step-four{
+                background-color: #f69dad;
+            }
+            #section-two div{
+                padding-top: 50px;
+                box-sizing: border-box;
+                padding-bottom: 50px;
+            }
+            #section-two div .icons-img{
+                height: 80px;
+                transition: all 0.3s;
+            }
+            #section-two div h2{
+                font-weight: 600;
+                font-size: 24px;
+            }
+            #section-two div p{
+                font-size: 14px;
+                letter-spacing: 0.5px;
+                line-height: 1.6;
+                padding-right: 50px;
+                padding-left: 50px;
+            }
+            #section-two div:hover .icons-img{
+                transform: scale(1.1, 1.1);
+            }
+            #section-three{
+                width: 100%;
+                height: 100hv;
+                margin: 0;
+                background-color: #f7eee2;
+                padding-top: 55px;
+                padding-bottom: 160px;
+            }
+            #section-three>div>p:first-of-type{
+                color: #91ac41;
+                font-size: 24px;
+                font-family: 'Caveat', cursive;
+                margin: 0;
+                margin-top: 35px;
+            }
+            #section-three>div>p:last-of-type{
+                font-family: 'Poppins', sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                color: #8b8b99;
+                letter-spacing: 0.5px;
+            }
+            #section-three div h2{
+                font-family: 'Poppins', sans-serif;
+                font-size: 44px;
+                font-weight: 600;
+            }
+            #social{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                margin-top: 50px;
+              align-content: center;
+              align-items: center;
+            }
+            #social div{
+                height: 50vh;
+            }
+            #social div .icons{
+                display: inline-block;
+                width: 140px;
+                height: 140px;
+                background-color: #e3b375;
+                border-radius: 50%;
+                transition: all 0.3s;
+            }
+            #social div .icons-img{
+                display: inline-block;
+                color: white;
+                transform: translateY(40px);
+                font-size: 60px;
+            }
+            #social div:hover .icons{
+                transform: scale(1.1,1.1);
+            }
+            #social div h2{
+                font-family: 'Poppins', sans-serif;
+                font-size: 24px;
+                font-weight: 600;
+                width: 100%;
+                margin-bottom: 0;
+                max-width: 1000px;
+            }
+            #social div p{
+                font-family: 'Poppins', sans-serif;
+                font-size: 16px;
+                letter-spacing: 0.5px;
+                font-weight: 500;
+                color: #8b8b99;
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+            #section-four{
+                width: 100%;
+                height: 100hv;
+                background-color: white;
+                padding-top:50px;
+                padding-bottom: 40px;
+            }
+            #section-four div p:first-of-type{         
+            color: #91ac41;
+            font-size: 24px;
+            font-family: 'Caveat', cursive;
+            margin: 0;
+            margin-top: 35px;
+            padding: 0;
+            }
+            #section-four div h2{
+                font-family: 'Poppins', sans-serif;
+                font-size: 44px;
+                font-weight: 600;
+                margin: 0;
+                width: 100%;
+            }
+            #section-four div p:last-of-type{
+                font-family: 'Poppins', sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                color: #8b8b99;
+                letter-spacing: 0.5px;
+            }
+            #testi{
+                display: grid;
+                grid-template-columns: auto auto auto;
+                grid-column-gap: 30px;
+                margin-left: 20px;
+                margin-right: 20px;
+                box-sizing: border-box;
+            }
+            #testi div{
+                background-color: #f5f6fb;
+                border-top-left-radius: 45px;
+                border-bottom-left-radius: 45px;
+                border-bottom-right-radius: 45px;
+                padding:25px 30px 25px 30px;
+                height: 90%;
+                transition: all 0.3s;
+            }
+            #testi div:hover{
+                box-shadow: 2px 2px 8px rgb(241, 239, 239);
+            }
+            #testi div:nth-of-type(2){
+                transform: translateY(30px);
+            }
+            #testi div img{
+                height: 80px;
+                width: 80px;
+                border-radius: 50%;
+            }
+            #testi div p:first-of-type{              
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            font-style: Italic;
+            color: #8b8b99;
+            margin-bottom: 20px;
+            }
+            #testi div h3{
+               font-family: 'Poppins', sans-serif;
+               font-size: 16px;
+               font-weight: 600;
+               margin: 0;
+            }
+            #testi div p:last-of-type{
+               font-family: 'Poppins', sans-serif;
+               font-size: 12px;
+               color: #8b8b99;
+               font-style: Italic;
+               padding: 0;
+               margin: 0;
+            }
+            #section-five{
+                width: 100%;
+                height: 100hv;
+                padding-top:50px;
+                padding-bottom: 40px;
+            }
+            #section-container{
+                display: grid;
+                grid-template-columns: 70% 30%;
+            }
+            #section-container aside img{
+                width: 100%;
+                height: 50hv;
+            }
+            #form{
+                background-image: url("https://cdn.pixabay.com/photo/2016/11/29/13/52/antique-1870000_960_720.jpg");
+                background-size: cover;
+                text-align: left;
+                padding-left: 60px;
+                padding-right: 30px;
+                padding-top: 50px;
+                height: 100%;
+            }
+            #section-container div h1{
+                font-family: 'Poppins', sans-serif;
+                font-size: 44px;
+                font-weight: 600;
+                color: wheat;
+            }
+            #section-container div p{
+                font-family: 'Poppins', sans-serif;
+               font-size: 15px;
+               color: #bbbbca;
+               line-height: 1.5;
+               letter-spacing: 0.5px;
+               padding-right: 90px;
+            }
+            #subscribe{
+                background-color:#f69dad;
+                border:0;
+                padding: 15px 30px 15px 30px;
+                font-size: 12px;
+                font-weight: 600;
+                color: white;
+                border-radius: 3px;
+                text-transform: uppercase;
+            }
+            #mail{
+                width: 100%;
+                border:0;
+                border-radius: 4px;
+                font-weight: 500;
+                background-color: white;
+                padding: 12px;
+                color: #8b8b99;
+                font-size: 16px;
+                margin-top: 60px;
+                margin-bottom: 50px;
+                outline: none;
+            }
+            #subscribe:hover{
+                background-color: transparent;
+                color:lightpink;
+            }
+            #section-six{
+                margin-top: 10px;
+                width: 100%;
+                padding-bottom: 90px;
+                padding-top:90px;
+                background-color:rgb(233, 248, 233);
+            }
+            #section-six-container{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+            }
+            #section-six-container div h1{
+                font-size: 40px;
+                font-weight: 600;
+                margin: 0;
+            }
+            #section-six-container div p{
+                color: darkgreen;
+                font-style: italic;
+                font-weight: 600;
+                margin: 0;
+            }
+            #section-seven{
+                padding-top: 70px;
+            }
+            #section-seven h1{
+                font-family: 'Poppins', sans-serif;
+                font-size: 40px;
+                font-weight: 400;
+                margin: 0;
+                color: #8b8b99;
+            }
+            #section-seven div{
+                margin: 40px 45% 40px 45%;
+                border-bottom: 1px solid orange;
+            }
+            #section-seven iframe{
+                height: 75%;
+                width: 75%;
+            }
+            #section-eight{
+                padding-top: 60px;
+                display: grid;
+                grid-template-columns: 50% 50%;
+                text-align: left;
+            }
+            #section-eight>div:first-of-type,#section-eight>div:last-of-type{
+                padding: 1rem;
+                box-sizing: border-box;
+            }
+            #section-eight div p{
+                color: #91ac41;
+                font-size: 24px;
+                font-family: 'Caveat', cursive;
+                margin: 0;
+                margin-top: 35px;
+                padding: 0;
+            }
+            #section-eight div h1{
+                font-family: 'Poppins', sans-serif;
+                font-size: 44px;
+                font-weight: 600;
+                margin: 0;
+                width: 100%;
+            }
+            #section-eight div h3,pre{
+                font-family: 'Poppins', sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                color: #8b8b99;
+                letter-spacing: 0.5px;
+            }
+            .form-input{
+                width: 100%;
+                border:0.5px solid lightgray;
+                border-radius: 4px;
+                background-color: white;
+                color: #8b8b99;
+                padding: 10px 0 10px 10px;
+                font-size: 16px;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                background-color: white;
+                color: #8b8b99;
+                outline: none;
+            }
+            #submit-button{
+                font-size: 16px;
+                padding: 15px 30px 15px 30px;
+                float: left;
+            }
+            footer{
+                background-color:#232323;
+                color: white;
+                font-size: 14px;
+                padding: 30px 0 30px 0;
+                letter-spacing: 0.5px;
+            }
+            #contact-form div{
+                text-align: center;
+                margin: 0 5px;
+            }
+            @media(max-width: 720px){
+                    #topbar{
+                    height: 70px;
+                    width: 100%;
+                    }
+                    .menu1{
+                        display: none;
+                    }
+                    .menus:last-of-type{
+                        margin-right: 5px;
+                    }
+                    #logo{
+                        margin-left: 10px;
+                    }
+                     #section-one div h1{
+                        font-size: 28px;
+                    }
+                     #section-one div p{
+                        padding: 16px;
+                        box-sizing: border-box;
+                    }
+                     #section-two{
+                         display: grid;
+                         grid-template-columns: auto;
+                    }
+                     #section-three div{
+                         text-align: center;
+                         display: grid;
+                         grid-template-columns: auto;
+                    }
+                     #social div .icons{
+                         margin-right: auto;
+                         margin-left: auto;
+                    }
+                    #testi{
+                        display: grid;
+                        grid-template-columns: auto;
+                        row-gap: 30px;
+                    }
+                    #testi div:nth-of-type(2){
+                        height: 85%;
+                        transform: translateY(7px);
+                    }
+                    #section-container{
+                        display: grid;
+                        grid-template-columns:auto;
+                    }
+                    #section-six-container{
+                        display: grid;
+                        grid-template-columns: auto;
+                    }
+                    #section-seven iframe{
+                        height: 75%;
+                        width: 100%;
+                    }
+                    #section-eight{
+                        padding-top: 60px;
+                        padding-bottom: 60px;
+                        display: grid;
+                        grid-template-columns:auto;
+                        text-align: left;
+                    }
+                }
+    </style>
+</head>
+<body>
+    <header id="head">
+        <nav id="topbar">
+            <img src="https://cdn.pixabay.com/photo/2018/08/19/17/54/education-3617221_960_720.png" alt="LOGO" id="logo"/>
+            <div id="menu-container">
+                <div class="menus menu1" id="dropdown">
+                    <span>Menu</span><i class="fas fa-caret-down"></i>
+                    <div id="drop">
+                        <a href="#section-two"><span>Basic Functions</span></a>
+                        <a href="#section-three"><span>Our Facilities</span></a>
+                        <a href="#section-four"><span>Our Mentors</span></a>
+                        <a href="#section-five"><span>Follow Us</span></a>
+                    </div>
+                </div>
+                <div class="menus menu1"><a href="#section-seven"><span>Watch Video</span></a></div>
+                <div class="menus menu1"><a href="#section-eight"><span>Contact Us</span></a></div>
+                <div class="menus"><button class="green-button" onclick="alert('Welcome to S.N. Classes')">ENROLL NOW</button></div>
+            </div>
+        </nav>
+        <main>
+        <section id="section-one">
+            <div>
+                <h1 id="section-one-head">WELCOME TO S. N. TUTORIALS</h1>
+                <p class="desc">With the high quality mentorship and a good infrastructure students will find studying here as an opportunity. With the daily lectures and weekly mock test students will cultivate an habit of learning by building the great mindset to tackle the future challenges.</p>
+            </div>
+        </section>
+        <section id="section-two">
+            <div id="step-one">
+                    <img class="icons-img" src="https://img.icons8.com/dusk/64/000000/school-director.png"/>
+                    <h2>Step 01.</h2>
+                    <p>Highly Qualified Mentors for the betterment of the students to gain a conceptual knowledge about the curriculum.</p>
+            </div>
+            <div id="step-two">
+                    <img class="icons-img" src="https://img.icons8.com/nolan/64/building.png"/>
+                    <h2>Step 02.</h2>
+                    <p>Good infrastructure to keep the environment of the class suitable for the focussed learning.</p>
+            </div>
+            <div id="step-three">
+                <img class="icons-img" src="https://img.icons8.com/nolan/64/love-book.png"/>
+                    <h2>Step 03.</h2>
+                    <p>We also provide the homeworks and the study material for the revision purpose.</p>
+            </div>
+            <div id="step-four">
+                <img class="icons-img" src="https://img.icons8.com/doodle/96/000000/question-mark--v1.png"/>
+                    <h2>Step 04.</h2>
+                    <p>The queries of the student regarding the curriculum are always welcomed.</p>
+            </div>
+        </section>
+        <section id="section-three">
+            <div>
+                <p>Methodological Learning</p>
+                <h2>S. N. TUTORIALS</h2>
+                <p>Knowledge gained will bring to you a better opportunity.</p>
+                <div id="social">
+                <div>
+                    <div class="icons"><img class="icons-img" src="https://img.icons8.com/nolan/64/structural.png"/></div>
+                    <h2>Good Infrastructure</h2>
+                    <p>With a good Infrastructure students will love to study in.</p>
+                </div>
+                <div>
+                    <div class="icons"><img class="icons-img" src="https://img.icons8.com/dusk/64/000000/teacher.png"/></div>
+                    <h2>High Quality Mentors</h2>
+                    <p>Good Mentors create a intelligent mind.</p>
+                </div>
+                <div>
+                    <div class="icons"><img class="icons-img" src="https://img.icons8.com/nolan/64/saving-book.png"/></div>
+                    <h2>Best Study Material</h2>
+                    <p>It is good to give the students the best study material for the self revision.</p>
+                </div>
+                <div>
+                    <div class="icons"><img class="icons-img" src="https://img.icons8.com/nolan/64/warranty-card.png"/></div>
+                    <h2>Best in Class</h2>
+                    <p>A good student will use the best of his/her resources for the betterment of her/himself.</p>
+                </div>   
+                </div>  
+            </div>
+        </section>
+        <section id="section-four">
+            <div>
+                <p>Conceptual Knowledge, The Key to success.</p>
+                <h2>Our Mentors</h2>
+                <p>An Highly Qualified Mentors for Students.</p>
+                <div id="testi">
+                    <div>
+                        <img src="https://mobirise.com/extensions/organicamp/assets/images/face5.jpg"/>
+                        <p>Completed M.Sc in Physics from the vartak college.
+                            An Highly Qualified Teacher and a lecturer in Viva college with an experience of 5+ Year in Teaching.
+                        </p>
+                        <h3>Preeti C</h3>
+                        <p>Lecturer in Science</p>
+                    </div>
+                    <div>
+                        <img src="https://mobirise.com/extensions/organicamp/assets/images/face6.jpg"/>
+                        <p>Completed Masters in Mathematics from the Bhavans college and PhD holder in the Ancient Mathematics.
+                        Lecturer of Mathematics in the Bhavans college with an experience in teaching for 8+ Year.
+                        </p>
+                        <h3>Shayam Gupta</h3>
+                        <p>Maths Teacher</p>
+                    </div>
+                    <div>
+                        <img src="https://mobirise.com/extensions/organicamp/assets/images/face7.jpg"/>
+                        <p>Pursued an M.sc in Physics and Chemistry from Vartak colege with a 1st class marks.
+                        Mentor at Various Classes including the M.T classes, S.P. classes, having a 7+ Year of teaching experience in Physics and Chemistry.
+                        </p>
+                        <h3>Rakesh Vishwakarma</h3>
+                        <p>Physics And Chemistry Lecturer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section-five">
+            <div id="section-container">
+                <aside>
+                    <img src="https://cdn.pixabay.com/photo/2017/07/02/09/03/books-2463779_960_720.jpg"/>
+                </aside>
+                <div id="form">
+                    <h1>Follow Us</h1>
+                    <p>A wide range of educational material available.</p>
+                    <div><input id="mail" type="text" placeholder="Your Email"/></div>
+                    <div><button id="subscribe">Subscribe</button></div>
+                </div>
+            </div>
+        </section>
+        <section id="section-six">
+            <div id="section-six-container">
+                <div>
+                    <h1>7</h1>
+                    <p>Year of experiences</p>
+                </div>
+                <div>
+                    <h1>10k</h1>
+                    <p>Happy Students</p>
+                </div>
+                <div>
+                    <h1>9k</h1>
+                    <p>100% Satisfaction</p>
+                </div>
+                <div>
+                    <h1>11k</h1>
+                    <p>Satisfied Parents</p>
+                </div>     
+            </div>
+        </section>
+        <section id="section-seven">
+            <h1>Watch Video</h1>
+            <div></div>
+            <iframe src="https://www.youtube.com/embed/3Yq7L7C5W0k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="video"></iframe>
+            <!-- <iframe frameborder="0" allowfullscreen="" src="https://player.vimeo.com/video/275412279" class="video"></iframe> -->
+        </section>
+        <section id="section-eight">
+            <div>
+                <p>Contact Us</p>
+                <h1>Address Information</h1>
+                <h3>Knowledge is not a power but the application of knowledge is power.</h3>
+                <h2>Nallasopara Branch</h2>
+                <pre>
+Orange Height A-wing
+1st floor near Funfiesta,
+Monday to Saturday : 9am to 9pm.
+s.n.tutorials.mail.com
+                </pre>
+                <h2>Vasai Branch</h2>
+                <pre>
+MountView Apt B-wing
+1st floor near vartak college,
+Monday to Saturday : 9am to 9pm.
+s.n.tutorials.mail.com
+                </pre>
+            </div>
+            <div>
+                <p>Meet Our Team</p>
+                <h1>Get In Touch</h1>
+                <h3>An important step toward the better future of the Students.</h3>
+                <form id="contact-form">
+                    <div><input class="form-input" type="text" placeholder="Name"/></div>
+                    <div><input class="form-input" type="text" placeholder="Phone"/></div>
+                    <div><input class="form-input" type="text" placeholder="Subject"/></div>
+                    <div><input class="form-input" type="text" placeholder="E-mail"/></div>
+                    <div><textarea class="form-input" placeholder="Message"></textarea></div>
+                    <div><button class="green-button" id="submit-button" onclick="alert('Form Submited')">Submit Now</button></div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+            <span>&copy; Copyright 2020 PAVANV88 - All Rights Reserved</span>
+     </footer>
+</header>
+</body>
+</html>
